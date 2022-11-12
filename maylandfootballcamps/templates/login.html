@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<header class="bg-light py-5">
+    <div class="container px-2 px-lg-5 my-5">
+        <div class="text-center text-red">
+          <img src="https://i.bleacherreport.net/images/team_logos/328x328/maryland_terrapins_football.png?canvas=492,328" class="img-fluid" alt="...">
+            <p class="lead fw-normal text-red-50 mb-0">Login!!</p>
+        </div>
+    </div>
+  </header>
+  <div class="container">
+
+<form class="form-group" method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {{ form.email.label }} {{ form.email() }}
+    {{ form.password.label }} {{ form.password(class="form-control" name="userpass" placeholder="Password") }}
+    {{ form.submit() }}
+</form>
+{% endblock %}
